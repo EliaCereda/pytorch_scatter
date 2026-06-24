@@ -1,0 +1,24 @@
+[workspace]
+name = "torch-scatter"
+channels = ["conda-forge", "eliacereda"]
+platforms = ["linux-aarch64"]
+preview = ["pixi-build"]
+
+[package]
+name = "torch-scatter"
+version = "2.1.3dev0"
+
+[package.build]
+backend = { name = "pixi-build-python", version = ">=0.5.2" }
+
+[package.build-dependencies]
+cmake = ">=3.29,<4"
+ninja = ">=1.13,<2"
+
+[package.host-dependencies]
+python = ">=3.12,<3.13"
+pip = "*"
+setuptools = "<82"
+
+pytorch = { version = "2.11.*", channel = "eliacereda" }
+torchvision = { version = "0.26.*", channel = "eliacereda" }
