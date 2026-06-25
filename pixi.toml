@@ -9,6 +9,8 @@ name = "torch-scatter"
 version = "2.1.3dev0"
 
 [package.build]
+# FIXME: has compiled extensions, should pin Python version
+# noarch = false
 backend = { name = "pixi-build-python", version = ">=0.5.2" }
 
 [package.build-dependencies]
@@ -22,3 +24,8 @@ setuptools = "<82"
 
 pytorch = { version = "2.11.*", channel = "eliacereda" }
 torchvision = { version = "0.26.*", channel = "eliacereda" }
+
+[package.run-dependencies]
+# FIXME: pytorch should add run_exports
+# pytorch = { version = "2.11.*", channel = "eliacereda" }
+# torchvision = { version = "0.26.*", channel = "eliacereda" }
